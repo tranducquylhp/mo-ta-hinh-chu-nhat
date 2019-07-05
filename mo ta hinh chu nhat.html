@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p id="rectangle"></p>
+    <script>
+        let Rectangle = function (height, width) {
+            this.height = height;
+            this.width = width;
+
+            this.getHeight = function () {
+                return height;
+            };
+            this.setHeight = function (height) {
+                this.height = height;
+            };
+
+            this.getWidth = function () {
+                return width;
+            };
+            this.setWidth = function (width) {
+                this.width = width;
+            };
+
+            this.getArea = function () {
+                return this.height * this.width;
+            }
+
+        };
+
+        let rectangle = new Rectangle(100,400);
+        let height = rectangle.getHeight();
+        let width = rectangle.getWidth();
+        let s="<canvas width='"+ width + "' height='"+height+"' style='border:1px solid #000000;'></canvas>";
+        document.getElementById("rectangle").innerHTML = s;
+        rectangle.setHeight(200);
+        rectangle.setWidth(300);
+        document.write("Dien tic hinh chu nhat moi la: "+rectangle.getArea());
+    </script>
+</body>
+</html>
