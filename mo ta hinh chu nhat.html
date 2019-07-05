@@ -6,20 +6,21 @@
 </head>
 <body>
     <p id="rectangle"></p>
+    <p id="rectangle1"></p>
     <script>
         let Rectangle = function (height, width) {
             this.height = height;
             this.width = width;
 
             this.getHeight = function () {
-                return height;
+                return this.height;
             };
             this.setHeight = function (height) {
                 this.height = height;
             };
 
             this.getWidth = function () {
-                return width;
+                return this.width;
             };
             this.setWidth = function (width) {
                 this.width = width;
@@ -38,6 +39,10 @@
         document.getElementById("rectangle").innerHTML = s;
         rectangle.setHeight(200);
         rectangle.setWidth(300);
+        height = rectangle.getHeight();
+        width = rectangle.getWidth();
+        let s1="<canvas width='"+ width + "' height='"+height+"' style='border:1px solid #000000;'></canvas>";
+        document.getElementById("rectangle1").innerHTML = s1;
         document.write("Dien tic hinh chu nhat moi la: "+rectangle.getArea());
     </script>
 </body>
